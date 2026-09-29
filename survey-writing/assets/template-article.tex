@@ -1,0 +1,102 @@
+% ============================================================
+% Template base para artigos de survey/tutorial gerado pela
+% skill survey-writing. Ajuste \documentclass conforme o venue
+% confirmado na Fase 0 — classes comuns em Computação/Engenharia:
+%   - IEEEtran           (periódicos/conferências IEEE)
+%   - acmart             (periódicos/conferências ACM, ex.: ACM CSUR)
+%   - sbc                (conferências/periódicos da SBC, ex.: SBRC, JBCS)
+%   - article (fallback) usado abaixo — compila em qualquer
+%     distribuição LaTeX padrão quando a classe do venue ainda
+%     não estiver disponível no ambiente do usuário.
+% Troque a linha abaixo pela classe exigida assim que o usuário
+% confirmar o venue e disponibilizar o arquivo .cls, se necessário.
+% ============================================================
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{TÍTULO PROVISÓRIO — ver Fase 1 em research.md}
+\author{AUTOR(ES)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% TODO (Fase 8): escrever por último, resumindo escopo, contribuições
+% e principais achados/insights da síntese (não uma lista de tópicos).
+\end{abstract}
+
+% --------------------------------------------------------------
+% Introdução: SEM subseções, SEM figuras/tabelas/gráficos (a
+% primeira ilustração do artigo só aparece a partir da seção 2).
+% Motivação, escopo (Fase 1), posicionamento SUPERFICIAL frente a
+% surveys existentes (só o suficiente para situar a contribuição —
+% a comparação detalhada e a eventual tabela comparativa vão para
+% o Background ou para a subseção de taxonomia do corpo principal,
+% nunca aqui), resumo em 1-2 frases do framework/taxonomia adotada
+% (o detalhamento é exclusivo da primeira subseção do corpo
+% principal), contribuições explícitas em bullets. Ver template
+% próprio (assets/template-introducao.tex) e
+% references/03-estrutura-taxonomias.md, seção "Regras de conteúdo
+% da Introdução".
+% --------------------------------------------------------------
+\input{sections/01_introducao.tex}
+
+% --------------------------------------------------------------
+% Background/Preliminares (opcional — decidido na Fase 3). É aqui
+% (ou, na ausência de Background, na subseção de taxonomia do
+% corpo principal) que entram o aprofundamento do estado da arte,
+% o detalhamento do framework/taxonomia e a eventual tabela
+% comparativa com surveys relacionadas — nunca na Introdução. É
+% também a partir desta seção (seção 2 do artigo) que figuras,
+% tabelas e gráficos podem aparecer pela primeira vez.
+% --------------------------------------------------------------
+% \input{sections/02_background.tex}
+
+% --------------------------------------------------------------
+% CORPO PRINCIPAL — UMA ÚNICA seção (\section), cujo título é
+% confirmado com o usuário na Fase 3 (ex.: "Panorama da Área",
+% "Revisão da Literatura", ou um nome específico ao tema — nunca
+% "Corpo Principal" literalmente no artigo final). Dentro dela, o
+% arquivo abaixo contém, em sequência, uma \subsection para a
+% taxonomia adotada — com o detalhamento completo do framework e,
+% se não houver Background, também a tabela comparativa com
+% surveys relacionadas —, uma \subsection por eixo principal da
+% taxonomia, e uma \subsection por seção transversal pertinente
+% (segurança/privacidade, datasets/benchmarks, padronização/
+% indústria) — tudo no mesmo nível de subseção, no mesmo arquivo.
+% Ver references/03-estrutura-taxonomias.md.
+% --------------------------------------------------------------
+\input{sections/03_corpo_principal.tex}
+
+% --------------------------------------------------------------
+% Seção de tutorial (apenas se Fase 5 aplicável) — seção própria,
+% separada do corpo principal.
+% --------------------------------------------------------------
+% \input{sections/09_tutorial.tex}
+
+% --------------------------------------------------------------
+% Desafios e direções futuras (Fase 7) — seção dedicada, nunca
+% espalhada pelo texto.
+% --------------------------------------------------------------
+\input{sections/10_desafios_futuros.tex}
+
+% --------------------------------------------------------------
+% Conclusão.
+% --------------------------------------------------------------
+\input{sections/11_conclusao.tex}
+
+% Estilo de bibliografia depende do venue confirmado na Fase 0:
+% IEEEtran (IEEE), ACM-Reference-Format (ACM), sbc (SBC), ou
+% plainnat/abbrvnat como fallback genérico.
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}
